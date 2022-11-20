@@ -1,5 +1,7 @@
 body::-webkit-scrollbar {
     display: none;
+    padding: 0px;
+    margin: 0px;
     /* for Chrome, Safari, and Opera */
 }
 .nav-bar{
@@ -88,7 +90,7 @@ color: #FFFFFF;
 .icons {
     display: flex;
     align-items: center;
-    padding-right: 252px;
+    padding-right: 130px;
     
 }
 
@@ -114,7 +116,8 @@ color: #FFFFFF;
 .button{
     align-items: center;
     height: 40px;
-    margin-right: 26px ;
+    /* margin-right: 26px ; */
+    margin-right: 150px ;
     width: 102px;
     margin-top: 18px;
     border-radius: 4px;
@@ -130,7 +133,7 @@ color: #FFFFFF;
 
 .list {
     position: absolute;
-    width: 1493px;
+    width: auto;
     height: 50px;
     top: 104px;
     /* left: 50%; */
@@ -144,6 +147,57 @@ color: #FFFFFF;
     background: #00a0ae;
     display: flex;
     box-shadow: 0 10px 30px rgba(0, 0, 0, .3)
+}
+
+.toggle-button{
+    position: absolute;
+    top: 30px;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+.toggle-button .bar{
+    height: 3px;
+    width: 100%;
+    background-color: #0ab4c3;
+    border-radius: 10px;
+}
+
+@media (max-width: 600px)
+{
+    .toggle-button{
+        display: flex;
+    }
+    
+      
+    .list{
+        top: 70px;
+        flex-direction: column;
+        display: none;
+        width: 100%;
+        padding: 0px;
+        height: 0px;
+        
+    }
+    .list li{
+        text-align: center;
+        height: 68px;
+        
+    }
+    .name span{
+        background-color: #007092;
+        width: 200px;
+        border-radius: 5px;
+    }
+    .list.active{
+        display: flex;
+        color: #9da7aa;
+    }
+    
+  
 }
 
 ul li {
@@ -204,7 +258,7 @@ ul li a:hover .icon .fa {
 
 ul li a .name {
     position: relative;
-    height: 20px;
+    height: 40px;
     width: 100%;
     display: block;
     overflow: hidden;
@@ -224,25 +278,9 @@ ul li a .name span {
     /* adding the transition to make it more attractive */
 
 }
-
-/*set and change position, top, width, left, height color of the 'class'.name span:before*/
-ul li a .name span:before {
-    content: attr(data-text);
-    position: absolute;
-    top: -100%;
-    width: 100%;
-    left: 0;
-    /* height: 1005; */
-    color: #FFFFFF;
-
-}
-
-/*style hover effect of ul li a .name span */
 ul li a:hover .name span {
     transform: translateY(20px);
 }
-/* slider code */
-
 
 @keyframes fade {
     from {
@@ -256,7 +294,7 @@ ul li a:hover .name span {
 
 
 #slider {
-    /* margin: 0 auto; */margin-top: 119px;
+    margin-top: 119px;
     width: 100%;
     overflow: hidden;
     height: 280px;
@@ -315,48 +353,7 @@ img {
         margin-left: 30px;
         
 }
-/* .product-container{
-    width: 10px;
-}
-.product-list{
-    /* position: absolute;
-        width: 1520px;
-        
-        top: 620px;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        /* padding: 20px 0;
-        /* padding-left: 20px; */
-        
-        /* padding-right: 0px; 
-        padding-left: 100px;  
-        
-        margin-left: 50px;
-        background: black;
-        display: flex; 
-         background-size: contain; 
-}
-.product-list :last-child{
-    /* margin-right: -20px; 
-    width: 1518px;
-}
-.product-images{
-    /* width: auto; 
-    height: 200px;
-    padding: 5px;
-    margin-left: -100px;
-    /* background-size: contain; 
-}
-.un{
-    width: 400px;
-    height: 0px;
-} */
-/* .product-list{
-    display: flex;
-    background-color: black;
-    padding: 5px;
-    margin-right: 0px;
-} */
+
 .prduct-container{
     display: flex;
         background-color: rgba(255, 255, 255, 0.92);
@@ -368,9 +365,6 @@ img {
     padding-left: 30px;
     display: block;
 
-    /* margin-right:5px ; */
-    /* margin-top: 20px; */
-
 }
 .product-images-last{
     height: 250px;
@@ -379,15 +373,13 @@ img {
     margin-right: -10px;
     display: block;
 
-    /* margin-right:5px ; */
-    /* margin-top: 20px; */
-
 }
 .bottom{
     margin-top: 20px;
-    height:250px ;
+    height:260px ;
     width: 1520px;
     margin-left: -10px;
+    margin-bottom: 0%;
     /* margin-right: -20px; */
     display: flex;
     background-color: #00838F;
@@ -419,38 +411,6 @@ position: absolute;
     margin-left: 1080px;
     margin-top: 40px;
 }
-/* .social-icons{
-    display: flex;
-    margin-top: 58px;
-    margin: 15px 0 25px 0;
-    background: #ecf0f3;
-        box-shadow: -3px -3px 7px #ffffff,
-            3px 3px 5px #ceced1;
-}
-.social-icons a i {
-    position: relative;
-    z-index: 3;
-    text-align: center;
-    width: 100%;
-    height: 100%;
-    line-height: 40px;
-    padding: 15px;
-}
-
-.social-icons a.facebook i {
-    /* color: #4267B2; 
-    height: 10px;
-}
-
-.social-icons a.insta i {
-    /* color: #1DA1F2; 
-}
-
-.social-icons a.linkdin i {
-    /* color: #2abb5d; 
-}
- */
-
 .media-icons {
     padding: 10px;
     font-size: 18px;
